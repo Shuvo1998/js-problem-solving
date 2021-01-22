@@ -23,7 +23,7 @@ function budgetCalculator(quantityOfWatch, quantityOfPhone, quantityOfLaptop){
     }
 }
 // console.log(budgetCalculator(1,2,3));
-console.log(budgetCalculator(1,-2,3));
+// console.log(budgetCalculator(1,-2,3));
 // a function to calculate hotel cost
 function hotelCost(howManyDaysToStay){
     var fare = 0;
@@ -48,7 +48,40 @@ function hotelCost(howManyDaysToStay){
         return "Error: Days can be only positive numbers!";
     }
 }
-console.log(hotelCost(10));
-console.log(hotelCost(20));
-console.log(hotelCost(22));
-console.log(hotelCost(-1));
+// console.log(hotelCost(10));
+// console.log(hotelCost(20));
+// console.log(hotelCost(22));
+// console.log(hotelCost(-1));
+// a function to return the largest names from an array of names
+function megaFriend(friends){
+    var name, largestCountedName = 0, largeName;
+    for(var i=0; i<friends.length; i++){
+        var count = 0 , index;
+        var sameLength;
+        name = friends[i];
+        for(var j=0; j<name.length; j++){
+            ++count;
+        }
+        if(largestCountedName < count){
+            largestCountedName = count;
+            largeName = name;
+            sameLength = 0;
+            index = i;
+        }else if(largestCountedName == count){
+            sameLength++;
+            if(sameLength == 1){
+                largeName = friends[i-1];
+            }else{
+                largeName = friends[index];
+            }
+        }
+
+    }
+    return largeName;  
+}
+var friendList = ['shuvo', 'tumpa','krishna'];
+console.log(megaFriend(friendList));
+var friendList = ['shuvo', 'tumpa','krish'];
+console.log(megaFriend(friendList));
+var friendList = ['shuvo', 'tumpa','krishna','trishna'];
+console.log(megaFriend(friendList));
