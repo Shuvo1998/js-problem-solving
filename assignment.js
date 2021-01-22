@@ -55,14 +55,15 @@ function hotelCost(howManyDaysToStay){
 // a function to return the largest names from an array of names
 function megaFriend(friends){
     var name, largestCountedName = 0, largeName;
+    //iterating each names from the array friends
     for(var i=0; i<friends.length; i++){
         var count = 0 , index;
         var sameLength;
         name = friends[i];
         for(var j=0; j<name.length; j++){
-            ++count;
+            ++count;//counting the length of each name
         }
-        if(largestCountedName < count){
+        if(largestCountedName < count){//checking the largest one
             largestCountedName = count;
             largeName = name;
             sameLength = 0;
@@ -75,7 +76,6 @@ function megaFriend(friends){
                 largeName = friends[index];
             }
         }
-
     }
     return largeName;  
 }
